@@ -17,6 +17,19 @@ class Usuarios {
     return persona;
   }
 
+  getBuscarPersona(nombre) {
+    var personaBuscada = this.personas.filter(
+      (personaBuscada) =>
+        personaBuscada.nombre.toUpperCase() == nombre.toUpperCase()
+    );
+
+    if (personaBuscada.length === 0) {
+      personaBuscada = [...this.personas];
+    }
+
+    return personaBuscada;
+  }
+
   getPersonas() {
     return this.personas;
   }
